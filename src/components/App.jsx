@@ -27,7 +27,7 @@ const App = () => {
         <center>
         {/* <StaticImage src="../images/education.png" alt="education"/> */}
         <div className="image">
-        <img src={logo}/>
+        <img style={{maxWidth: "100%"}} src={logo}/>
         </div>
         <div className="title">
         <h1>College Search</h1>
