@@ -1,4 +1,5 @@
 import React from "react"
+import "./results.css"
 
 class Results extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Results extends React.Component {
     // }
 
     render() {
-        return <ul>{this.props.message.map((element, index) => {
+        return <div>{this.props.message.map((element, index) => {
             const stuff = [
                 [element.latest.admissions.admission_rate.overall, "Admissions rate"],
                 [element.latest.admissions.sat_scores.average.overall, "Average SAT score"],
@@ -33,13 +34,19 @@ class Results extends React.Component {
                 [element.latest.cost.tuition.out_of_state, "Out-of-State Tuition"],
             ]
 
-            return (<li key={index}>{element.school.name}
-            <ul>
-                {stuff.map((element, index) => element[0] && <li key={index}>{element[1] + ": " + element[0]}</li>)}
-            </ul>
-            </li>)
-        })}</ul>
+            return (
+            <center>
+            <div className="card border-info mb-3" style={{maxWidth: "70%"}}>
+            <div className="card-header"></div>
+            <div className="card-body">
+               <h5 className="card-title" key={index}>{element.school.name} </h5>
+                {stuff.map((element, index) => element[0] && <div className="card-text" key={index}>{element[1] + ": " + element[0]}</div>)}
+            </div>
+            </div>
+            </center>)
+        })}</div>
     }
+
 }
 
 export default Results
