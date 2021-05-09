@@ -33,9 +33,28 @@ class Results extends React.Component {
                 [element.latest.cost.tuition.out_of_state, "Out-of-State Tuition"],
             ]
 
+            const programs = element.latest.academics.program_percentage;
+            const sortable = []
+            for(let prog in programs) sortable.push([prog, programs[prog]])
+            console.log(sortable.sort((e1, e2) => e2[1] - e1[1]))
+
+            const rendered = []
+            for(let i = 0; i < 5; i++) rendered.push(sortable[i])
+
+            rendered.map(element => {
+                element[0] = element[0].charAt(0).toUpperCase() + element[0].slice(1)
+
+                return element
+            })
+
             return (<li key={index}>{element.school.name}
             <ul>
                 {stuff.map((element, index) => element[0] && <li key={index}>{element[1] + ": " + element[0]}</li>)}
+                {rendered[0][1] && <li>Top 5 programs:
+                    <ul>
+                        {rendered.map((el, ind) => <li key={ind}>{el[0]}: {el[1] * 100}%</li>)}
+                    </ul>
+                </li>}
             </ul>
             </li>)
         })}</ul>
