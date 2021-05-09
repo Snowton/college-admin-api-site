@@ -37,7 +37,6 @@ class Results extends React.Component {
             const programs = element.latest.academics.program_percentage;
             const sortable = []
             for(let prog in programs) sortable.push([prog, programs[prog]])
-            console.log(sortable.sort((e1, e2) => e2[1] - e1[1]))
 
             const rendered = []
             for(let i = 0; i < 5; i++) rendered.push(sortable[i])
