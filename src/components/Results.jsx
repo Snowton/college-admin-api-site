@@ -26,7 +26,11 @@ class Results extends React.Component {
     render() {
         return <ul>{this.props.message.map((element, index) => {
             const stuff = [
-                [element.latest.admissions.admission_rate.overall, "Admissions rate"]
+                [element.latest.admissions.admission_rate.overall, "Admissions rate"],
+                [element.latest.admissions.sat_scores.average.overall, "Average SAT score"],
+                [element.latest.admissions.act_scores.midpoint.cumulative, "Midpoint ACT score"],
+                [element.latest.cost.tuition.in_state, "In-State Tuition"],
+                [element.latest.cost.tuition.out_of_state, "Out-of-State Tuition"],
             ]
 
             return (<li key={index}>{element.school.name}
