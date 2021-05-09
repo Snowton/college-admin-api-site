@@ -4,25 +4,7 @@ import "./results.css"
 class Results extends React.Component {
     constructor(props) {
         super(props)
-
-        // this.state = {
-        //     message: []
-        // }
     }
-
-    // shouldComponentUpdate(props, state) {
-    //     // console.log(this.props.query != props.query, this.state.message != state.message)
-    //     return true
-    // }
-
-    // componentDidUpdate() {
-    //     fetch("https://api.data.gov/ed/collegescorecard/v1/schools?api_key=rYi5aVIgo1ipZMa10ptOzIxlTGZxN2FIcOeE0wjo&school.name=" + this.props.message)
-    //     .then(res => res.json())
-    //     .then(({results}) => {
-    //         this.setState(old => ({message: results}))
-    //         console.log(results);
-    //     })
-    // }
 
     render() {
         return <div>{this.props.message.map((element, index) => {
@@ -48,18 +30,18 @@ class Results extends React.Component {
             })
 
             return (
-            <center>
+            <center key={index}>
             <div className="card border-info mb-3" style={{maxWidth: "70%"}}>
             <div className="card-header"></div>
             <div className="card-body">
                <h5 className="card-title" key={index}>{element.school.name} </h5>
                 {stuff.map((element, index) => element[0] && <div className="card-text" key={index}>{element[1] + ": " + element[0]}</div>)}
                 
-                {rendered[0][1] && <><hr /><p><h6>Top 5 programs:</h6>
+                {rendered[0][1] ? <><hr /><div><h6>Top 5 programs:</h6>
                     <div>
                         {rendered.map((el, ind) => <li key={ind}>{el[0]}: {(el[1] * 100).toFixed(2)}%</li>)}
                     </div>
-                </p></>}
+                </div></> : ""}
             </div>
             </div>
             </center>)
