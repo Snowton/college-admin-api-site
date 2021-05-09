@@ -20,6 +20,8 @@ class Results extends React.Component {
             const sortable = []
             for(let prog in programs) sortable.push([prog, programs[prog]])
 
+            sortable.sort((e1, e2) => e2[1] - e1[1])
+
             const rendered = []
             for(let i = 0; i < 5; i++) rendered.push(sortable[i])
 
@@ -37,11 +39,11 @@ class Results extends React.Component {
                <h5 className="card-title" key={index}>{element.school.name} </h5>
                 {stuff.map((element, index) => element[0] && <div className="card-text" key={index}>{element[1] + ": " + element[0]}</div>)}
                 
-                {rendered[0][1] ? <><hr /><div><h6>Top 5 programs:</h6>
+                {rendered[0][1] && <><hr /><div><h6>Top 5 programs:</h6>
                     <div>
                         {rendered.map((el, ind) => <li key={ind}>{el[0]}: {(el[1] * 100).toFixed(2)}%</li>)}
                     </div>
-                </div></> : ""}
+                </div></>}
             </div>
             </div>
             </center>)
