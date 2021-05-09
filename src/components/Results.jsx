@@ -9,9 +9,9 @@ class Results extends React.Component {
         }
     }
 
-    shouldComponentUpdate(props) {
-        console.log(this.props.query != props.query)
-        return this.props.query != props.query
+    shouldComponentUpdate(props, state) {
+        console.log(this.props.query != props.query, this.state.message != state.message)
+        return true
     }
 
     componentDidUpdate() {
@@ -20,7 +20,7 @@ class Results extends React.Component {
         .then(({results}) => {
             this.setState(old => ({message: results}))
             console.log(results);
-        }) 
+        })
     }
 
     render() {
