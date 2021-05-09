@@ -5,23 +5,31 @@ class Results extends React.Component {
         super(props)
 
         this.state = {
-            query: "",
-            message: ""
+            query: "New York",
+            message: []
         }
     }
 
     componentDidMount() {
-        fetch("https://api.data.gov/ed/collegescorecard/v1/schools?api_key=S4QswG1yOcPueT1ki5kqvg9Kx4YF1VOAudYcz0cQ&_fields=school.name")
+        fetch("https://api.data.gov/ed/collegescorecard/v1/schools?api_key=S4QswG1yOcPueT1ki5kqvg9Kx4YF1VOAudYcz0cQ&school.name=" + this.state.query)
         .then(res => res.json())
         .then(({results}) => {
-            const message = results.reduce((acc, element) => acc + element["school.name"]+ ", " , "")
-            console.log(results, message)
-            this.setState(old => ({message: message}))
+            this.setState(old => ({message: results}))
+            console.log(results);
         }) 
     }
 
     render() {
-        return <>{this.state.message}</>
+
+        return <ul>{this.state.message.map((element, index) => {
+            const ovad = element.latest.admissions.admission_rate.overall
+
+            return (<li key={index}>{element.school.name}
+            <ul>
+                {ovad && <li>{"Admissions rate: " + ovad}</li>}
+            </ul>
+            </li>)
+        })}</ul>
     }
 }
 
