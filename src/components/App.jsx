@@ -2,6 +2,8 @@ import React from "react"
 import Results from "./Results.jsx"
 import Input from "./Input.jsx"
 import "./results.css"
+// import { StaticImage } from "gatsby-plugin-image"
+import logo from '../images/education.svg';
 
 const {useState} = React
 
@@ -23,7 +25,10 @@ const App = () => {
 
     return (<>
         <center>
-        <img src="../images/education.png" alt="education"></img>
+        {/* <StaticImage src="../images/education.png" alt="education"/> */}
+        <div className="image">
+        <img src={logo}/>
+        </div>
         <div className="title">
         <h1>College Search</h1>
         </div>
