@@ -9,11 +9,11 @@ class Results extends React.Component {
     render() {
         return <div>{this.props.message.map((element, index) => {
             const stuff = [
-                [element.latest.admissions.admission_rate.overall, "Admissions rate"],
-                [element.latest.admissions.sat_scores.average.overall, "Average SAT score"],
-                [element.latest.admissions.act_scores.midpoint.cumulative, "Midpoint ACT score"],
-                [element.latest.cost.tuition.in_state, "In-State Tuition"],
-                [element.latest.cost.tuition.out_of_state, "Out-of-State Tuition"],
+                [element.latest.admissions.admission_rate.overall, "Admissions rate", (f) => (100 * f).toFixed(2) + "%"],
+                [element.latest.admissions.sat_scores.average.overall, "Average SAT score", (f) => f],
+                [element.latest.admissions.act_scores.midpoint.cumulative, "Midpoint ACT score", (f) => f],
+                [element.latest.cost.tuition.in_state, "In-State Tuition", (f) => ("$" + f)],
+                [element.latest.cost.tuition.out_of_state, "Out-of-State Tuition", (f) => ("$" + f)],
             ]
 
             const programs = element.latest.academics.program_percentage;
@@ -37,7 +37,7 @@ class Results extends React.Component {
             <div className="card-header"></div>
             <div className="card-body">
                <h5 className="card-title" key={index}>{element.school.name} </h5>
-                {stuff.map((element, index) => element[0] && <div className="card-text" key={index}>{element[1] + ": " + element[0]}</div>)}
+                {stuff.map((element, index) => element[0] && <div className="card-text" key={index}>{element[1] + ": " + element[2](element[0])}</div>)}
                 
                 {rendered[0][1] && <><hr /><div><h6>Top 5 programs:</h6>
                     <div>
