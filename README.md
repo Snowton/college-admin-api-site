@@ -1,7 +1,3 @@
-## Inspiration
-
-We went on Naviance and it takes 5 hours to load. As juniors entering the college admissions process, we began to narrow down our search on the colleges that we want to apply for. From talking to our peers, we realized that many have been struggling to search for colleges as there are so many options available to them. We wanted to create a site that is easy for all students to access with information including admissions rate, SAT/ACT score, tuition, and the top five programs at each school to help guide students in their search. Finding out more about colleges is very important during this journey and we hope to help others like ourselves with their process! 
-
 # CollegeSearch
 
 winner!
@@ -11,6 +7,10 @@ Video demo: https://www.youtube.com/watch?v=NN05vCwTEVc.
 GitHub repo: https://github.com/Snowton/college-admin-api-site.  
 Presentation (Slides): https://docs.google.com/presentation/d/1Y8eQemvNSja95Ium_J-QC037YkYrG9mzEjvPOgmucF0/edit?usp=sharing.  
 Devpost link: https://devpost.com/software/college-search?ref_content=my-projects-tab&ref_feature=my_projects.  
+
+## Inspiration
+
+We went on Naviance and it takes 5 hours to load. As juniors entering the college admissions process, we began to narrow down our search on the colleges that we want to apply for. From talking to our peers, we realized that many have been struggling to search for colleges as there are so many options available to them. We wanted to create a site that is easy for all students to access with information including admissions rate, SAT/ACT score, tuition, and the top five programs at each school to help guide students in their search. Finding out more about colleges is very important during this journey and we hope to help others like ourselves with their process! 
 
 #### here is the devpost description
 
