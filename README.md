@@ -6,11 +6,11 @@ We went on Naviance and it takes 5 hours to load. As juniors entering the colleg
 
 winner!
 
-Link: https://collegesearch.gtsb.io/
-Video demo: https://www.youtube.com/watch?v=NN05vCwTEVc
-GitHub repo: https://github.com/Snowton/college-admin-api-site
-Presentation (Slides): https://docs.google.com/presentation/d/1Y8eQemvNSja95Ium_J-QC037YkYrG9mzEjvPOgmucF0/edit?usp=sharing
-Devpost link: https://devpost.com/software/college-search?ref_content=my-projects-tab&ref_feature=my_projects
+Link: https://collegesearch.gtsb.io/.  
+Video demo: https://www.youtube.com/watch?v=NN05vCwTEVc.  
+GitHub repo: https://github.com/Snowton/college-admin-api-site.  
+Presentation (Slides): https://docs.google.com/presentation/d/1Y8eQemvNSja95Ium_J-QC037YkYrG9mzEjvPOgmucF0/edit?usp=sharing.  
+Devpost link: https://devpost.com/software/college-search?ref_content=my-projects-tab&ref_feature=my_projects.  
 
 #### here is the devpost description
 
